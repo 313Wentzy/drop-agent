@@ -1,0 +1,39 @@
+[package]
+name = "Dropmazter-agent"
+version = "0.1.3"
+edition = "2024"
+
+[features]
+default = ["console"]       # dev build shows console
+console = []                # player build: use --no-default-features to hide console
+
+[dependencies]
+anyhow = "1"
+screenshots = "0.8"
+log = "0.4"
+env_logger = "0.11"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+winreg = "0.52"
+base64 = "0.22"
+
+tray-icon = "0.13"
+winit = "0.29"
+
+# ✅ give tokio everything it needs (sync, net, time, etc.)
+tokio = { version = "1.47", features = ["full"] }
+
+# ✅ async websocket with TLS via rustls + native roots
+tokio-tungstenite = { version = "0.26", features = ["rustls-tls-native-roots"] }
+
+# ✅ rustls with ring backend so we can install a CryptoProvider
+rustls = { version = "0.23", default-features = false, features = ["ring", "std"] }
+
+futures-util = "0.3"
+single-instance = "0.3.3"
+uuid = { version = "1", features = ["v4"] }
+dirs-next = "2"
+
+image = { version = "0.24.9", default-features = false, features = ["png"] }
+warp = "0.3"
+discord-presence-rs = "1.0.0"
