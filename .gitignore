@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# Allow source code
+!src/
+!src/main.rs
+
+# Allow cargo files
+!Cargo.toml
+!Cargo.lock
+
+# Allow repo files
+!.gitignore
+!README.md

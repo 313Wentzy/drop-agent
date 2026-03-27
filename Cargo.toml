@@ -1,0 +1,57 @@
+[package]
+name = "Dropmazter-agent"
+version = "2.1.0"
+edition = "2021"
+
+[features]
+default = ["console"]       # dev build shows console
+console = []                # player build: use --no-default-features to hide console
+msstore = []                # Microsoft Store build: disables self-update + manual shortcuts
+
+[dependencies]
+anyhow = "1"
+screenshots = "0.8"
+log = "0.4"
+env_logger = "0.11"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+winreg = "0.52"
+base64 = "0.22"
+
+tray-icon = "0.13"
+winit = "0.29"
+
+# ✅ give tokio everything it needs (sync, net, time, etc.)
+tokio = { version = "1.47", features = ["full"] }
+
+# ✅ async websocket with TLS via rustls + native roots
+tokio-tungstenite = { version = "0.26", features = ["rustls-tls-native-roots"] }
+
+# ✅ rustls with ring backend so we can install a CryptoProvider
+rustls = { version = "0.23", default-features = false, features = ["ring", "std"] }
+
+futures-util = "0.3"
+single-instance = "0.3.3"
+uuid = { version = "1", features = ["v4"] }
+dirs-next = "2"
+
+image = { version = "0.24", features = ["ico", "jpeg"] }
+warp = "0.3"
+discord-presence-rs = "1.0.0"
+
+
+self_update = { version = "0.39", features = ["archive-zip"] }
+global-hotkey = "0.7.0"
+chrono = "0.4"
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Graphics_Gdi",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_System_Threading",       # NEW - for OpenProcess
+    "Win32_System_ProcessStatus",   # NEW - for GetModuleBaseNameW
+    "Win32_System_LibraryLoader",   # for LoadLibraryW / GetProcAddress (dark mode menus)
+]}
+
+[build-dependencies]
+winres = "0.1"
