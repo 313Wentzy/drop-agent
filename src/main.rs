@@ -76,7 +76,7 @@ unsafe extern "system" {
 type WsWrite = SplitSink<WebSocketStream<tokio_tungstenite::MaybeTlsStream<tokio::net::TcpStream>>, Message>;
 
 const WS_URL: &str = "wss://api.dropmazter.com:8443/pluto/agent";
-const AGENT_VERSION: &str = "2.2.0";
+const AGENT_VERSION: &str = "2.3.0";
 const LOCAL_SERVER_PORT: u16 = 30123;
 const TOKEN_REFRESH_INTERVAL: Duration = Duration::from_secs(10 * 60);
 const FORTNITE_PROCESS_NAME: &str = "FortniteClient-Win64-Shipping.exe";
@@ -939,7 +939,7 @@ fn run_discord_presence() {
                         .set_timestamps(Timestamps::new().set_start(session_start))
                         .set_buttons(vec![
                             Button::new()
-                                .set_label("Try Drop Calcualtor".to_string())
+                                .set_label("Try Drop Calculator".to_string())
                                 .set_url("https://dropmazter.com/".to_string()),
                             Button::new()
                                 .set_label("Shop Dropmaps".to_string())
