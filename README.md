@@ -1,4 +1,6 @@
 # Drop Mazter Agent
+# IMPORTANT: PLEASE READ
+DROP MAZTER AGENT IS NO LONGER IN OPPERATION AND HAS BEEN DEPRECIATED ON THE WEBSITE. I AM KEEPING THE SOURCE PUBLIC FOR ANYONE WHO IS INTERESTED IN IT'S FUNCTION STILL, BUT TO BE CLEAR I DO NOT CONDONE USING IT IN A REAL GAME IN ANY WAY OR FORM. USE AT OWN RISK.
 
 The Drop Mazter Agent is a lightweight desktop companion app that connects to [dropmazter.com](https://dropmazter.com) to deliver real-time drop timing overlays directly onto your Fortnite game. It runs silently in your system tray and activates only when Fortnite is running.
 
